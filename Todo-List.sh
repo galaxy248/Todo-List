@@ -17,6 +17,11 @@ function _list {
   awk -F\, 'BEGIN{print "ID-Status-Name-Priority"} {print NR "| " $1 " - " $2 " - " $3}' tasks.csv
 }
 
+#delete all of tasks
+function _clear {
+  > $file
+}
+
 # check command
 case $1 in
 add)
@@ -65,6 +70,11 @@ add)
 list)
      _list
      ;;
+
+clear)
+      _clear
+      ;;
+
 *) echo "unknown command"
    exit 1
   ;;
