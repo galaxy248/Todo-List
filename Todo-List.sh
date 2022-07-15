@@ -27,6 +27,24 @@ function _find {
   grep -n $1 $file | tr ":" "," | awk -F\, 'BEGIN{print "ID-Status-Priority-Name"} {print $1 "| " $2 " - " $3 " - " $4}'
 }
 
+#done a task with id
+function _done {
+  
+  re='^[0-9]+$'
+  if ! [[ $1 =~ $re ]] ; then
+    echo "Error: your ID is not a valied --> should be a number"
+    exit 1
+  fi
+
+  lines_number=$(wc -l "$file")
+  if [[ $1 > $lines_number ]]; then
+    echo "task $1 not exists!"
+    exit 1
+  fi
+
+  sed -i ""$1"s/0/1/" $file
+}
+
 # check command
 case $1 in
 add)
@@ -79,6 +97,11 @@ list)
 find)
       shift
       _find $1
+      ;;
+
+done)
+      shift
+      _done $1
       ;;
 
 clear)
