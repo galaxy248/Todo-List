@@ -17,7 +17,7 @@ find command : <br />
 &emsp;`bash Todo-List.sh find` <br />
 
 done command : <br />
-&emsp;`bash Todo-List.sh done \[ID\]` <br />
+&emsp;`bash Todo-List.sh done [ID]` <br />
     
 revert command : <br />
-&emsp;`bash Todo-List.sh revert \[ID\]` <br />
+&emsp;`bash Todo-List.sh revert [ID]` <br />
