@@ -22,6 +22,11 @@ function _clear {
   > $file
 }
 
+#find an specific task
+function _find {
+  grep -n $1 $file | tr ":" "," | awk -F\, 'BEGIN{print "ID-Status-Priority-Name"} {print $1 "| " $2 " - " $3 " - " $4}'
+}
+
 # check command
 case $1 in
 add)
@@ -70,6 +75,11 @@ add)
 list)
      _list
      ;;
+
+find)
+      shift
+      _find $1
+      ;;
 
 clear)
       _clear
