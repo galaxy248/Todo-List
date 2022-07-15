@@ -12,6 +12,11 @@ function _add {
     echo "Title : "$1" | Priority : "$2" Added!"
 }
 
+# see all of tasks
+function _list {
+  awk -F\, 'BEGIN{print "ID-Status-Name-Priority"} {print NR "| " $1 " - " $2 " - " $3}' tasks.csv
+}
+
 # check command
 case $1 in
 add)
@@ -56,6 +61,10 @@ add)
   done
   _add $mytitle $mypriority
   ;;
+
+list)
+     _list
+     ;;
 *) echo "unknown command"
    exit 1
   ;;
