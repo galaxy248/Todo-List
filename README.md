@@ -15,3 +15,6 @@ clear command : <br />
 
 find command : <br />
     bash Todo-List.sh find <br />
+
+done command : <br />
+    bash Todo-List.sh done \[ID\] <br />
