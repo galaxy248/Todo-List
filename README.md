@@ -11,4 +11,7 @@ list command : <br />
     bash Todo-List.sh list <br />
 
 clear command : <br />
-    bash Todo-List.sh clear
+    bash Todo-List.sh clear <br />
+
+find command : <br />
+    bash Todo-List.sh find <br />
