@@ -68,6 +68,10 @@ function _revert {
 case $1 in
 add)
   shift
+  if [[ "$1" -eq "" ]]; then
+    echo "add comand needs to necessary option \"-t\" and unnecessary option \"-p\""
+    exit 1
+  fi
   while [ -n "$1" ]
   do
       case "$1" in
