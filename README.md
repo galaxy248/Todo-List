@@ -8,4 +8,7 @@ add command : <br />
             h or H = High, m or M = Medium, l or L = Low <br />
 
 list command : <br />
-    bash Todo-List.sh list
+    bash Todo-List.sh list <br />
+
+clear command : <br />
+    bash Todo-List.sh clear
