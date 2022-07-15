@@ -45,6 +45,25 @@ function _done {
   sed -i ""$1"s/0/1/" $file
 }
 
+
+#revert to undone a task with id
+function _revert {
+  
+  re='^[0-9]+$'
+  if ! [[ $1 =~ $re ]] ; then
+    echo "Error: your ID is not a valied --> should be a number"
+    exit 1
+  fi
+
+  lines_number=$(wc -l "$file")
+  if [[ $1 > $lines_number ]]; then
+    echo "task $1 not exists!"
+    exit 1
+  fi
+
+  sed -i ""$1"s/1/0/" $file
+}
+
 # check command
 case $1 in
 add)
@@ -104,6 +123,11 @@ done)
       _done $1
       ;;
 
+revert)
+      shift
+      _revert $1
+      ;;
+      
 clear)
       _clear
       ;;
