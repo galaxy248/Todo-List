@@ -18,3 +18,6 @@ find command : <br />
 
 done command : <br />
     bash Todo-List.sh done \[ID\] <br />
+    
+revert command : <br />
+    bash Todo-List.sh revert \[ID\] <br />
