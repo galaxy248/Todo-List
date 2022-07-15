@@ -5,4 +5,7 @@ add command : <br />
     bash Todo-List.sh add -t "homework" -p H <br />
     --> -t : set title (essential) <br />
     --> -p : set priority (unnecessary - default:"LOW") <br />
-            h or H = High, m or M = Medium, l or L = Low
+            h or H = High, m or M = Medium, l or L = Low <br />
+
+list command : <br />
+    bash Todo-List.sh list
