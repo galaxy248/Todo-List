@@ -14,7 +14,7 @@ function _add {
 
 # see all of tasks
 function _list {
-  awk -F\, 'BEGIN{print "ID-Status-Name-Priority"} {print NR "| " $1 " - " $2 " - " $3}' tasks.csv
+  awk -F\, 'BEGIN{print "ID-Status-Priority-Name"} {print NR "| " $1 " - " $2 " - " $3}' tasks.csv
 }
 
 #delete all of tasks
