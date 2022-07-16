@@ -43,6 +43,8 @@ function _done {
   fi
 
   sed -i ""$1"s/0/1/" $file
+
+  _list
 }
 
 
@@ -62,6 +64,8 @@ function _revert {
   fi
 
   sed -i ""$1"s/1/0/" $file
+
+  _list
 }
 
 # check command
